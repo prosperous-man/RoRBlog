@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>RoRBlog</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog of Ruby on Rails</title>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog of Ruby on Rails" />
+  <meta name="author" content="prospdragon" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <!-- css -->
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <!-- Fav and touch icons -->
+  <%= favicon_link_tag '/ico/apple-touch-icon-144-precomposed.png', type: 'image/png', rel: 'apple-touch-icon-precomposed', sizes: '144x144' %>
+  <%= favicon_link_tag '/ico/apple-touch-icon-114-precomposed.png', type: 'image/png', rel: 'apple-touch-icon-precomposed', sizes: '114x114' %>
+  <%= favicon_link_tag '/ico/apple-touch-icon-72-precomposed.png', type: 'image/png', rel: 'apple-touch-icon-precomposed', sizes: '72x72' %>
+  <%= favicon_link_tag '/ico/apple-touch-icon-57-precomposed.png', type: 'image/png', rel: 'apple-touch-icon-precomposed' %>
+  <%= favicon_link_tag '/ico/favicon.png', type: 'image/png' %>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <%= render "layouts/header" %>
+
+  <%= render "layouts/headline" %>
+
+  <%= yield %>
+
+  <%= render "layouts/footer" %>
+</div>
+
+<a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
+
+</body>
 </html>

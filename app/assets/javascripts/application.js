@@ -11,6 +11,19 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require jquery.easing.1.3
+//= require bootstrap
+//= require jcarousel/jquery.jcarousel.min
+//= require jquery.fancybox.pack
+//= require jquery.fancybox-media
+//= require google-code-prettify/prettify
+//= require portfolio/jquery.quicksand
+//= require portfolio/setting
+//= require jquery.flexslider
+//= require jquery.nivo.slider
+//= require modernizr.custom
+//= require jquery.ba-cond.min
+//= require jquery.slitslider
+//= require animate
+//= require custom
 //= require_tree .
