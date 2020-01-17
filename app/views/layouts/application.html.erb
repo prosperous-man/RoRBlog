@@ -25,7 +25,9 @@
 
   <%= render "layouts/header" %>
 
-  <%= render "layouts/headline" %>
+  <% unless current_page? (root_path)%>
+    <%= render "layouts/headline" %>
+  <% end %>
 
   <%= yield %>
 

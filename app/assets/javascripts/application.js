@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
+//= require turbolinks
 //= require jquery.easing.1.3
 //= require bootstrap
 //= require jcarousel/jquery.jcarousel.min
