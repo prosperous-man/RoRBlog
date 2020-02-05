@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_title
 
   # GET /blogs
   # GET /blogs.json
@@ -71,4 +72,8 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :content)
     end
+
+  def set_title
+    @title = 'Blog'
+  end
 end
