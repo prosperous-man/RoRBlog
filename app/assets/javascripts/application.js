@@ -10,22 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-// require turbolinks
-//= require jquery.easing.1.3
-//= require bootstrap
-//= require jcarousel/jquery.jcarousel.min
-//= require jquery.fancybox.pack
-//= require jquery.fancybox-media
-//= require google-code-prettify/prettify
-//= require portfolio/jquery.quicksand
-//= require portfolio/setting
-//= require jquery.flexslider
-//= require jquery.nivo.slider
-//= require modernizr.custom
-//= require jquery.ba-cond.min
-//= require jquery.slitslider
-//= require animate
-//= require custom
+//= require jquery.min
+//= require jquery-migrate.min
+//= require bootstrap/js/bootstrap.min
+//= require back-to-top
+//= require fancybox/source/jquery.fancybox.pack
+//= require owl.carousel/owl.carousel.min
+//= require layout
+//= require bs-carousel
 //= require_tree .
+
+jQuery(document).ready(function() {
+    Layout.init();
+    Layout.initOWL();
+    Layout.initTwitter();
+    //Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+    //Layout.initNavScrolling();
+});

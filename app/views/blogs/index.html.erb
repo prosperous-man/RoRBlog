@@ -56,6 +56,8 @@
           </article>
         <% end %>
 
+        <%= will_paginate @blogs, renderer: BootstrapPagination::Rails  %>
+
         <div id="pagination">
           <span class="all">Page 1 of 3</span>
           <span class="current">1</span>

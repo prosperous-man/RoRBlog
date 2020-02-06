@@ -10,17 +10,16 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap
- *= require bootstrap-responsive
- *= require fancybox/jquery.fancybox
- *= require jcarousel
- *= require flexslider
- *= require google-code-prettify/prettify
- *= require font-awesome
- *= require custom-fonts
- *= require overwrite
+ *= require font-awesome/css/font-awesome.min
+ *= require bootstrap/css/bootstrap.min
  *= require animate
+ *= require fancybox/source/jquery.fancybox
+ *= require owl.carousel/assets/owl.carousel
+ *= require components
+ *= require slider
  *= require style
- *= require default
+ *= require style-responsive
+ *= require themes/red
+ *= require custom
  *= require_tree .
  */
