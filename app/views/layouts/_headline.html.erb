@@ -1,28 +1,8 @@
-<section id="inner-headline">
-  <div class="container">
-    <div class="row">
-      <div class="span4">
-        <div class="inner-heading">
-          <h2><%= @title %></h2>
-        </div>
-      </div>
-      <div class="span8">
-        <ul class="breadcrumb">
-          <li>
-            <%= link_to root_path do %>
-              <i class="icon-home"></i>
-            <% end %>
-            <i class="icon-angle-right"></i>
-          </li>
-          <li>
-            <% if params[:controller] == 'blogs' %>
-              <%= link_to @title, blogs_path %>
-            <% end %>
-            <i class="icon-angle-right"></i>
-          </li>
-          <li class="active"><%= params[:action] %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<ul class="breadcrumb">
+  <li><%= link_to "Home", root_path %></li>
+  <li><% if params[:controller] == 'blogs' %>
+      <%= link_to @title, blogs_path %>
+    <% end %>
+  </li>
+  <li class="active"><%= params[:action] %></li>
+</ul>

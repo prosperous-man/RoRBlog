@@ -1,131 +1,115 @@
-<!--<p id="notice"><%#= notice %></p>
-
-<p>
-  <strong>Title1:</strong>
-  <%#= @blog.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%#= @blog.content %>
-</p>
-
-<%#= link_to 'Edit', edit_blog_path(@blog) %> |
-<%#= link_to 'Back', blogs_path %>-->
-
-<section id="content">
+<div class="main">
   <div class="container">
-    <div class="row">
-      <div class="span8">
-        <article>
+
+    <%= render "layouts/headline" %>
+
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">
+      <!-- BEGIN CONTENT -->
+      <div class="col-md-12 col-sm-12">
+        <h1><%= @title %></h1>
+        <div class="content-page">
           <div class="row">
-            <div class="span8">
-              <%= notice %>
-              <div class="post-image">
-                <div class="post-heading">
-                  <h3><%= @blog.title %></h3>
+            <!-- BEGIN LEFT SIDEBAR -->
+            <div class="col-md-9 col-sm-9 blog-item">
+
+              <% if notice %>
+                <div class="alert alert-success" role="alert">
+                  <%= notice %>
                 </div>
-                <!--<img src="img/dummies/blog/img1.jpg" alt="" />-->
+              <% end %>
+
+              <div class="blog-item-img">
+                <img src="/img/posts/img3.jpg" alt="">
               </div>
+              <h2><a href="javascript:;"><%= @blog.title %></a></h2>
               <p>
                 <%= @blog.content %>
               </p>
-              <div class="bottom-article">
-                <ul class="meta-post">
-                  <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                  <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                  <li><i class="icon-tags"></i><a href="#">Web design</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </article>
-        <!-- author info -->
-        <div class="about-author">
-          <a href="#" class="thumbnail align-left"><img src="/img/avatar.png" alt="" /></a>
-          <h5><strong><a href="#">John doe</a></strong></h5>
-          <p>
-            Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper ad qui, est rebum nulla argumentum ei.
-          </p>
-        </div>
-        <div class="comment-area">
-          <h4>4 Comments</h4>
-          <div class="media">
-            <a href="#" class="thumbnail pull-left"><img src="/img/avatar.png" alt="" /></a>
-            <div class="media-body">
-              <div class="media-content">
-                <h6><span>March 12, 2013</span> Karen medisson</h6>
-                <p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
-                <a href="#" class="align-right">Reply comment</a>
-              </div>
-            </div>
-          </div>
-          <div class="media">
-            <a href="#" class="thumbnail pull-left"><img src="/img/avatar.png" alt="" /></a>
-            <div class="media-body">
-              <div class="media-content">
-                <h6><span>March 12, 2013</span> Smith sanderson</h6>
-                <p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
-                <a href="#" class="align-right">Reply comment</a>
-              </div>
-              <div class="media">
-                <a href="#" class="thumbnail pull-left"><img src="/img/avatar.png" alt="" /></a>
-                <div class="media-body">
-                  <div class="media-content">
-                    <h6><span>March 12, 2013</span> Thomas guttenberg</h6>
-                    <p>
-                      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </p>
-                    <a href="#" class="align-right">Reply comment</a>
+              <ul class="blog-info">
+                <li><i class="fa fa-user"></i> By admin</li>
+                <li><i class="fa fa-calendar"></i> <%= @blog.created_at.strftime("%b %e, %Y") %></li>
+                <li><i class="fa fa-comments"></i> 17</li>
+                <li><i class="fa fa-tags"></i> Metronic, Keenthemes, UI Design</li>
+                <li><i class="fa fa-pencil"></i> <%= link_to 'Edit', edit_blog_path(@blog) %></li>
+                <li><i class="fa fa-trash"></i> <%= link_to 'Delete', @blog, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              </ul>
+
+              <h2>Comments</h2>
+              <div class="comments">
+                <div class="media">
+                  <a href="javascript:;" class="pull-left">
+                    <img src="/img/people/img1-small.jpg" alt="" class="media-object">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading <span>5 hours ago / <a href="javascript:;">Reply</a></span></h4>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <!-- Nested media object -->
+                    <div class="media">
+                      <a href="javascript:;" class="pull-left">
+                        <img src="/img/people/img2-small.jpg" alt="" class="media-object">
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">Media heading <span>17 hours ago / <a href="javascript:;">Reply</a></span></h4>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                      </div>
+                    </div>
+                    <!--end media-->
+                    <div class="media">
+                      <a href="javascript:;" class="pull-left">
+                        <img src="/img/people/img3-small.jpg" alt="" class="media-object">
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading">Media heading <span>2 days ago / <a href="javascript:;">Reply</a></span></h4>
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                      </div>
+                    </div>
+                    <!--end media-->
                   </div>
                 </div>
+                <!--end media-->
+                <div class="media">
+                  <a href="javascript:;" class="pull-left">
+                    <img src="/img/people/img4-small.jpg" alt="" class="media-object">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading <span>July 25,2013 / <a href="javascript:;">Reply</a></span></h4>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                  </div>
+                </div>
+                <!--end media-->
               </div>
-            </div>
-          </div>
-          <div class="media">
-            <a href="#" class="thumbnail pull-left"><img src="/img/avatar.png" alt="" /></a>
-            <div class="media-body">
-              <div class="media-content">
-                <h6><span>March 12, 2013</span> Vicky lumora</h6>
-                <p>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </p>
-                <a href="#" class="align-right">Reply comment</a>
-              </div>
-            </div>
-          </div>
 
-          <h4>Leave your comment</h4>
-          <form id="commentform" action="#" method="post" name="comment-form">
-            <div class="row">
-              <div class="span4">
-                <input type="text" placeholder="* Enter your full name" />
-              </div>
-              <div class="span4">
-                <input type="text" placeholder="* Enter your email address" />
-              </div>
-              <div class="span4 margintop10">
-                <input type="text" placeholder="Enter your website" />
-              </div>
-              <div class="span8 margintop10">
-                <p>
-                  <textarea rows="12" class="input-block-level" placeholder="*Your comment here"></textarea>
-                </p>
-                <p>
-                  <button class="btn btn-theme margintop10" type="submit">Submit comment</button>
-                </p>
+              <div class="post-comment padding-top-40">
+                <h3>Leave a Comment</h3>
+                <form role="form">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email <span class="color-red">*</span></label>
+                    <input class="form-control" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" rows="8"></textarea>
+                  </div>
+                  <p><button class="btn btn-primary" type="submit">Post a Comment</button></p>
+                </form>
               </div>
             </div>
-          </form>
+            <!-- END LEFT SIDEBAR -->
+
+            <%= render "sidebar" %>
+            
+          </div>
         </div>
       </div>
-
-      <%= render "sidebar" %>
-
+      <!-- END CONTENT -->
     </div>
+    <!-- END SIDEBAR & CONTENT -->
   </div>
-</section>
+</div>

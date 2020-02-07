@@ -2665,6 +2665,9 @@ Demo Utils
 .blog-item .blog-item-img .carousel {
   margin-bottom: 0;
 }
+.blog-item .blog-item-img img {
+    width: 100%;
+}
 .blog-item blockquote {
   margin: 20px 40px 18px;
   border-color: #E84D1C;

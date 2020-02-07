@@ -12,6 +12,7 @@
 //
 //= require jquery.min
 //= require jquery-migrate.min
+//= require jquery_ujs
 //= require bootstrap/js/bootstrap.min
 //= require back-to-top
 //= require fancybox/source/jquery.fancybox.pack
